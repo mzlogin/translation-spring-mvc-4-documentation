@@ -1,0 +1,19 @@
+# MAC OSC Generated File
+.DS_Store
+
+# Final uploading directory, will be created and destoryed only in travis
+_book
+dist
+
+# Local development files
+css
+
+# Gitbook plugins installed by npm
+node_modules
+npm*debug.log
+
+# Intellij files
+.idea
+*.ipr
+*.iws
+*.iml

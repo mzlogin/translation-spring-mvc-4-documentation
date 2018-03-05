@@ -1,0 +1,1434 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>默认的DispatcherServlet配置 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3-dispatcherservlet-processing-sequence.html" />
+    
+    
+    <link rel="prev" href="1-special-bean-types-in-the-webapplicationcontext.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Part I: 目录与翻译注记(Table of contents and Notes)</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../CONTENTS.html">
+            
+                <a href="../../CONTENTS.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../NOTES.html">
+            
+                <a href="../../NOTES.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    翻译注记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II: 文档内容(Documentation contents)</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../21-1/introduction-to-spring-web-mvc-framework.html">
+            
+                <a href="../21-1/introduction-to-spring-web-mvc-framework.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Spring Web MVC框架简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../21-1/1-features-of-spring-web-mvc.html">
+            
+                <a href="../21-1/1-features-of-spring-web-mvc.html">
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    Spring Web MVC的新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../21-1/2-pluggability-of-other-mvc-implementations.html">
+            
+                <a href="../21-1/2-pluggability-of-other-mvc-implementations.html">
+            
+                    
+                        <b>2.1.2.</b>
+                    
+                    允许其他MVC实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="the-dispatcher-servlet.html">
+            
+                <a href="the-dispatcher-servlet.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    DispatcherServlet
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="1-special-bean-types-in-the-webapplicationcontext.html">
+            
+                <a href="1-special-bean-types-in-the-webapplicationcontext.html">
+            
+                    
+                        <b>2.2.1.</b>
+                    
+                    WebApplicationContext中特殊的Bean类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.2" data-path="2-default-dispatcherservlet-configuration.html">
+            
+                <a href="2-default-dispatcherservlet-configuration.html">
+            
+                    
+                        <b>2.2.2.</b>
+                    
+                    默认的DispatcherServlet配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="3-dispatcherservlet-processing-sequence.html">
+            
+                <a href="3-dispatcherservlet-processing-sequence.html">
+            
+                    
+                        <b>2.2.3.</b>
+                    
+                    DispatcherServlet的处理流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../21-3/implementing-controllers.html">
+            
+                <a href="../21-3/implementing-controllers.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    控制器的实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../21-3/1-defining-a-controller-with-@controller.html">
+            
+                <a href="../21-3/1-defining-a-controller-with-@controller.html">
+            
+                    
+                        <b>2.3.1.</b>
+                    
+                    使用@Controller注解定义一个控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../21-3/2-mapping-requests-with-@requestmapping.html">
+            
+                <a href="../21-3/2-mapping-requests-with-@requestmapping.html">
+            
+                    
+                        <b>2.3.2.</b>
+                    
+                    使用@RequestMapping注解映射请求路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../21-3/3-defining-@requestmapping-handler-methods.html">
+            
+                <a href="../21-3/3-defining-@requestmapping-handler-methods.html">
+            
+                    
+                        <b>2.3.3.</b>
+                    
+                    定义@RequestMapping注解的处理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../21-3/4-asynchronous-request-processing.html">
+            
+                <a href="../21-3/4-asynchronous-request-processing.html">
+            
+                    
+                        <b>2.3.4.</b>
+                    
+                    异步请求的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../21-3/5-testing-controllers.html">
+            
+                <a href="../21-3/5-testing-controllers.html">
+            
+                    
+                        <b>2.3.5.</b>
+                    
+                    对控制器测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../21-4/handler-mappings.html">
+            
+                <a href="../21-4/handler-mappings.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    处理器映射
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../21-4/1-intercepting-requests-with-a-handler-interceptor.html">
+            
+                <a href="../21-4/1-intercepting-requests-with-a-handler-interceptor.html">
+            
+                    
+                        <b>2.4.1.</b>
+                    
+                    使用HandlerInterceptor拦截请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../21-5/resolving-views.html">
+            
+                <a href="../21-5/resolving-views.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    视图解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../21-5/1-resolving-views-with-the-view-resolver-interface.html">
+            
+                <a href="../21-5/1-resolving-views-with-the-view-resolver-interface.html">
+            
+                    
+                        <b>2.5.1.</b>
+                    
+                    使用ViewResolver接口解析视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../21-5/2-chaining-view-resolvers.html">
+            
+                <a href="../21-5/2-chaining-view-resolvers.html">
+            
+                    
+                        <b>2.5.2.</b>
+                    
+                    视图链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../21-5/3-redirecting-to-views.html">
+            
+                <a href="../21-5/3-redirecting-to-views.html">
+            
+                    
+                        <b>2.5.3.</b>
+                    
+                    视图重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../21-5/4-content-negotiating-view-resolver.html">
+            
+                <a href="../21-5/4-content-negotiating-view-resolver.html">
+            
+                    
+                        <b>2.5.4.</b>
+                    
+                    内容协商解析器ContentNegotiatingViewResolver
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../21-6/using-flash-attributes.html">
+            
+                <a href="../21-6/using-flash-attributes.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    使用闪存属性FlashAttributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../21-7/building-uris.html">
+            
+                <a href="../21-7/building-uris.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    URI构造
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../21-7/1-building-uris-to-controllers-and-methods.html">
+            
+                <a href="../21-7/1-building-uris-to-controllers-and-methods.html">
+            
+                    
+                        <b>2.7.1.</b>
+                    
+                    为控制器和方法指定URI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../21-7/2-building-uris-to-controllers-and-methods-from-views.html">
+            
+                <a href="../21-7/2-building-uris-to-controllers-and-methods-from-views.html">
+            
+                    
+                        <b>2.7.2.</b>
+                    
+                    在视图中为控制器和方法指定URI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../21-8/using-locales.html">
+            
+                <a href="../21-8/using-locales.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    地区信息
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../21-8/1-obtaining-time-zone-information.html">
+            
+                <a href="../21-8/1-obtaining-time-zone-information.html">
+            
+                    
+                        <b>2.8.1.</b>
+                    
+                    获取时区信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../21-8/2-accept-header-locale-resolver.html">
+            
+                <a href="../21-8/2-accept-header-locale-resolver.html">
+            
+                    
+                        <b>2.8.2.</b>
+                    
+                    Accept请求头解析器AcceptHeaderLocaleResolver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../21-8/3-cookie-locale-resolver.html">
+            
+                <a href="../21-8/3-cookie-locale-resolver.html">
+            
+                    
+                        <b>2.8.3.</b>
+                    
+                    Cookie解析器CookieLocaleResolver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../21-8/4-session-locale-resolver.html">
+            
+                <a href="../21-8/4-session-locale-resolver.html">
+            
+                    
+                        <b>2.8.4.</b>
+                    
+                    Session解析器SessionLocaleResolver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../21-8/5-locale-change-interceptor.html">
+            
+                <a href="../21-8/5-locale-change-interceptor.html">
+            
+                    
+                        <b>2.8.5.</b>
+                    
+                    地区更改拦截器LocaleChangeInterceptor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../21-9/using-themes.html">
+            
+                <a href="../21-9/using-themes.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    主题 themes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../21-9/1-overview-of-themes.html">
+            
+                <a href="../21-9/1-overview-of-themes.html">
+            
+                    
+                        <b>2.9.1.</b>
+                    
+                    关于主题：概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../21-9/2-defining-themes.html">
+            
+                <a href="../21-9/2-defining-themes.html">
+            
+                    
+                        <b>2.9.2.</b>
+                    
+                    定义主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../21-9/3-theme-resolvers.html">
+            
+                <a href="../21-9/3-theme-resolvers.html">
+            
+                    
+                        <b>2.9.3.</b>
+                    
+                    主题解析器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../21-10/springs-multipart-file-upload-support.html">
+            
+                <a href="../21-10/springs-multipart-file-upload-support.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Spring的multipart（文件上传）支持
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.10.1" data-path="../21-10/1-introduction.html">
+            
+                <a href="../21-10/1-introduction.html">
+            
+                    
+                        <b>2.10.1.</b>
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10.2" data-path="../21-10/2-using-a-multipart-resolver-with-commons-fileupload.html">
+            
+                <a href="../21-10/2-using-a-multipart-resolver-with-commons-fileupload.html">
+            
+                    
+                        <b>2.10.2.</b>
+                    
+                    使用MultipartResolver与Commons FileUpload传输文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10.3" data-path="../21-10/3-using-a-multipart-resolver-with-servlet-3.html">
+            
+                <a href="../21-10/3-using-a-multipart-resolver-with-servlet-3.html">
+            
+                    
+                        <b>2.10.3.</b>
+                    
+                    Servlet 3.0下的MultipartResolver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10.4" data-path="../21-10/4-handling-a-file-upload-in-a-form.html">
+            
+                <a href="../21-10/4-handling-a-file-upload-in-a-form.html">
+            
+                    
+                        <b>2.10.4.</b>
+                    
+                    处理表单中的文件上传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10.5" data-path="../21-10/5-handling-a-file-upload-request-from-programmatic-clients.html">
+            
+                <a href="../21-10/5-handling-a-file-upload-request-from-programmatic-clients.html">
+            
+                    
+                        <b>2.10.5.</b>
+                    
+                    处理客户端发起的文件上传请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../21-11/handling-exceptions.html">
+            
+                <a href="../21-11/handling-exceptions.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.11.1" data-path="../21-11/1-handler-exception-handler.html">
+            
+                <a href="../21-11/1-handler-exception-handler.html">
+            
+                    
+                        <b>2.11.1.</b>
+                    
+                    处理器异常解析器HandlerExceptionHandler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11.2" data-path="../21-11/2-@exception-handler.html">
+            
+                <a href="../21-11/2-@exception-handler.html">
+            
+                    
+                        <b>2.11.2.</b>
+                    
+                    @ExceptionHandler注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11.3" data-path="../21-11/3-handling-standard-spring-mvc-exceptions.html">
+            
+                <a href="../21-11/3-handling-standard-spring-mvc-exceptions.html">
+            
+                    
+                        <b>2.11.3.</b>
+                    
+                    处理一般的Spring MVC异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11.4" data-path="../21-11/4-annotating-business-exceptions-with-@response-status.html">
+            
+                <a href="../21-11/4-annotating-business-exceptions-with-@response-status.html">
+            
+                    
+                        <b>2.11.4.</b>
+                    
+                    使用@ResponseStatus注解业务异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11.5" data-path="../21-11/5-customizing-the-default-servlet-container-error-page.html">
+            
+                <a href="../21-11/5-customizing-the-default-servlet-container-error-page.html">
+            
+                    
+                        <b>2.11.5.</b>
+                    
+                    Servlet默认容器错误页面的定制化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../21-12/web-security.html">
+            
+                <a href="../21-12/web-security.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Web安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../21-13/convention-over-configuration-support.html">
+            
+                <a href="../21-13/convention-over-configuration-support.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    "约定优于配置"的支持
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.13.1" data-path="../21-13/1-the-controller-controller-class-name-handler-mapping.html">
+            
+                <a href="../21-13/1-the-controller-controller-class-name-handler-mapping.html">
+            
+                    
+                        <b>2.13.1.</b>
+                    
+                    控制器类名-处理器映射ControllerClassNameHandlerMapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.2" data-path="../21-13/2-the-model-modelmap-modelandview.html">
+            
+                <a href="../21-13/2-the-model-modelmap-modelandview.html">
+            
+                    
+                        <b>2.13.2.</b>
+                    
+                    模型ModelMap(ModelAndView)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.3" data-path="../21-13/3-the-view-request-to-view-name-translator.html">
+            
+                <a href="../21-13/3-the-view-request-to-view-name-translator.html">
+            
+                    
+                        <b>2.13.3.</b>
+                    
+                    视图-请求与视图名的映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../21-14/http-caching-support.html">
+            
+                <a href="../21-14/http-caching-support.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    HTTP缓存支持
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.1" data-path="../21-14/1-cache-control-http-header.html">
+            
+                <a href="../21-14/1-cache-control-http-header.html">
+            
+                    
+                        <b>2.14.1.</b>
+                    
+                    HTTP请求头Cache-Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2" data-path="../21-14/2-http-caching-support-for-static-resources.html">
+            
+                <a href="../21-14/2-http-caching-support-for-static-resources.html">
+            
+                    
+                        <b>2.14.2.</b>
+                    
+                    对静态资源的HTTP缓存支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.3" data-path="../21-14/3-support-for-the-cache-control-etag-and-last-modified-response-header-in-controllers.html">
+            
+                <a href="../21-14/3-support-for-the-cache-control-etag-and-last-modified-response-header-in-controllers.html">
+            
+                    
+                        <b>2.14.3.</b>
+                    
+                    在控制器中设置Cache-Control、ETag和Last-Modified响应头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.4" data-path="../21-14/4-shallow-etag-support.html">
+            
+                <a href="../21-14/4-shallow-etag-support.html">
+            
+                    
+                        <b>2.14.4.</b>
+                    
+                    弱ETag
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../21-15/code-based-servlet-container-initialization.html">
+            
+                <a href="../21-15/code-based-servlet-container-initialization.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    基于代码的Servlet容器初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../21-16/configuring-spring-mvc.html">
+            
+                <a href="../21-16/configuring-spring-mvc.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    配置Spring MVC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.16.1" data-path="../21-16/1-enabling-the-mvc-java-config-or-the-mvc-xml-namespace.html">
+            
+                <a href="../21-16/1-enabling-the-mvc-java-config-or-the-mvc-xml-namespace.html">
+            
+                    
+                        <b>2.16.1.</b>
+                    
+                    启用MVC Java编程配置或MVC命名空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.2" data-path="../21-16/2-customizing-the-provided-configuration.html">
+            
+                <a href="../21-16/2-customizing-the-provided-configuration.html">
+            
+                    
+                        <b>2.16.2.</b>
+                    
+                    默认配置的定制化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.3" data-path="../21-16/3-conversion-and-formatting.html">
+            
+                <a href="../21-16/3-conversion-and-formatting.html">
+            
+                    
+                        <b>2.16.3.</b>
+                    
+                    转换与格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.4" data-path="../21-16/4-validation.html">
+            
+                <a href="../21-16/4-validation.html">
+            
+                    
+                        <b>2.16.4.</b>
+                    
+                    验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.5" data-path="../21-16/5-interceptors.html">
+            
+                <a href="../21-16/5-interceptors.html">
+            
+                    
+                        <b>2.16.5.</b>
+                    
+                    拦截器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.6" data-path="../21-16/6-content-negotiation.html">
+            
+                <a href="../21-16/6-content-negotiation.html">
+            
+                    
+                        <b>2.16.6.</b>
+                    
+                    内容协商
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.7" data-path="../21-16/7-view-controllers.html">
+            
+                <a href="../21-16/7-view-controllers.html">
+            
+                    
+                        <b>2.16.7.</b>
+                    
+                    视图控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.8" data-path="../21-16/8-view-resolvers.html">
+            
+                <a href="../21-16/8-view-resolvers.html">
+            
+                    
+                        <b>2.16.8.</b>
+                    
+                    视图解析器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.9" data-path="../21-16/9-serving-of-resources.html">
+            
+                <a href="../21-16/9-serving-of-resources.html">
+            
+                    
+                        <b>2.16.9.</b>
+                    
+                    资源的服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.10" data-path="../21-16/10-falling-back-on-the-default-servlet-to-serve-resources.html">
+            
+                <a href="../21-16/10-falling-back-on-the-default-servlet-to-serve-resources.html">
+            
+                    
+                        <b>2.16.10.</b>
+                    
+                    回到默认的Servlet来进行资源服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.11" data-path="../21-16/11-path-matching.html">
+            
+                <a href="../21-16/11-path-matching.html">
+            
+                    
+                        <b>2.16.11.</b>
+                    
+                    路径匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.12" data-path="../21-16/12-message-converters.html">
+            
+                <a href="../21-16/12-message-converters.html">
+            
+                    
+                        <b>2.16.12.</b>
+                    
+                    消息转换器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.13" data-path="../21-16/13-advanced-customizations-with-mvc-java-config.html">
+            
+                <a href="../21-16/13-advanced-customizations-with-mvc-java-config.html">
+            
+                    
+                        <b>2.16.13.</b>
+                    
+                    使用MVC Java编程进行高级定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.14" data-path="../21-16/14-advanced-customizations-with-the-mvc-namespace.html">
+            
+                <a href="../21-16/14-advanced-customizations-with-the-mvc-namespace.html">
+            
+                    
+                        <b>2.16.14.</b>
+                    
+                    使用MVC命名空间进行高级定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >默认的DispatcherServlet配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2122-&#x9ED8;&#x8BA4;&#x7684;dispatcherservlet&#x914D;&#x7F6E;">21.2.2 &#x9ED8;&#x8BA4;&#x7684;DispatcherServlet&#x914D;&#x7F6E;</h1>
+<p>&#x4E0A;&#x4E00;&#x5C0F;&#x8282;&#x8BB2;&#x5230;&#xFF0C;<code>DispatcherServlet</code>&#x7EF4;&#x62A4;&#x4E86;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x4FDD;&#x5B58;&#x4E86;&#x5176;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x6240;&#x6709;bean&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#x4FDD;&#x5B58;&#x5728;&#x5305;<code>org.springframework.web.servlet</code>&#x4E0B;&#x7684;<code>DispatcherServlet.properties</code>&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p>&#x8FD9;&#x4E9B;&#x7279;&#x6B8A;&#x7684;bean&#x90FD;&#x6709;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x3002;&#x6216;&#x65E9;&#x6216;&#x665A;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5BF9;&#x5B83;&#x4EEC;&#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#x3002;&#x6BD4;&#x5982;&#x8BF4;&#xFF0C;&#x901A;&#x5E38;&#x4F60;&#x9700;&#x8981;&#x914D;&#x7F6E;<code>InternalResourceViewResolver</code>&#x7C7B;&#x63D0;&#x4F9B;&#x7684;<code>prefix</code>&#x5C5E;&#x6027;&#xFF0C;&#x4F7F;&#x5176;&#x6307;&#x5411;&#x89C6;&#x56FE;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x3002;
+
+&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x7406;&#x89E3;&#x7684;&#x4E00;&#x4E2A;&#x4E8B;&#x60C5;&#x662F;&#xFF0C;&#x4E00;&#x65E6;&#x4F60;&#x5728;web&#x5E94;&#x7528;&#x4E0A;&#x4E0B;&#x6587;<code>WebApplicationContext</code>&#x4E2D;&#x914D;&#x7F6E;&#x4E86;&#x67D0;&#x4E2A;&#x7279;&#x6B8A;bean&#x4EE5;&#x540E;&#xFF08;&#x6BD4;&#x5982;<code>InternalResourceViewResolver</code>&#xFF09;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x4F60;&#x4E5F;&#x8986;&#x5199;&#x4E86;&#x8BE5;bean&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x3002;&#x6BD4;&#x65B9;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x914D;&#x7F6E;&#x4E86;<code>InternalResourceViewResolver</code>&#xFF0C;&#x90A3;&#x4E48;&#x6846;&#x67B6;&#x5C31;&#x4E0D;&#x4F1A;&#x518D;&#x4F7F;&#x7528;bean<code>ViewResolver</code>&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x5728;<a href="../21-16/configuring-spring-mvc.html">21.16&#x8282; Spring MVC&#x7684;&#x914D;&#x7F6E;</a>&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x4E86;&#x5176;&#x4ED6;&#x914D;&#x7F6E;Spring MVC&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x901A;&#x8FC7;Java&#x7F16;&#x7A0B;&#x914D;&#x7F6E;&#x6216;&#x8005;&#x901A;&#x8FC7;MVC XML&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002;&#x5B83;&#x4EEC;&#x4E3A;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;Spring MVC&#x5E94;&#x7528;&#x63D0;&#x4F9B;&#x4E86;&#x7B80;&#x6613;&#x7684;&#x5F00;&#x59CB;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x4F60;&#x5BF9;&#x6846;&#x67B6;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x6709;&#x592A;&#x591A;&#x4E86;&#x89E3;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x65E0;&#x8BBA;&#x4F60;&#x9009;&#x7528;&#x4F55;&#x79CD;&#x65B9;&#x5F0F;&#x5F00;&#x59CB;&#x914D;&#x7F6E;&#xFF0C;&#x672C;&#x8282;&#x6240;&#x4ECB;&#x7ECD;&#x7684;&#x4E00;&#x4E9B;&#x6982;&#x5FF5;&#x90FD;&#x662F;&#x57FA;&#x7840;&#x4E14;&#x666E;&#x9002;&#x7684;&#xFF0C;&#x5B83;&#x4EEC;&#x5BF9;&#x4F60;&#x540E;&#x7EED;&#x7684;&#x5B66;&#x4E60;&#x90FD;&#x5E94;&#x6709;&#x6240;&#x52A9;&#x76CA;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1-special-bean-types-in-the-webapplicationcontext.html" class="navigation navigation-prev " aria-label="Previous page: WebApplicationContext中特殊的Bean类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3-dispatcherservlet-processing-sequence.html" class="navigation navigation-next " aria-label="Next page: DispatcherServlet的处理流程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"默认的DispatcherServlet配置","level":"2.2.2","depth":2,"next":{"title":"DispatcherServlet的处理流程","level":"2.2.3","depth":2,"path":"publish/21-2/3-dispatcherservlet-processing-sequence.md","ref":"publish/21-2/3-dispatcherservlet-processing-sequence.md","articles":[]},"previous":{"title":"WebApplicationContext中特殊的Bean类型","level":"2.2.1","depth":2,"path":"publish/21-2/1-special-bean-types-in-the-webapplicationcontext.md","ref":"publish/21-2/1-special-bean-types-in-the-webapplicationcontext.md","articles":[]},"dir":"ltr"},"config":{"gitbook":">=3.1.0","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"publish/21-2/2-default-dispatcherservlet-configuration.md","mtime":"2018-03-05T13:24:10.721Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-05T13:25:03.202Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
